@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+table,
+th,
+td {
+    border: 0.2px solid #bdbdbd;
+    border-collapse: collapse;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+th,
+td {
+    padding: 10px 3px 10px 4px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bold {
+    font-weight: 700;
+    font-size: 15px;
+    font-family: Arial ;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.mainbox {
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+    padding: 8px 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.imgBox {
+    width: 100%;
+    border: 1px solid #bdbdbd;
+    overflow: hidden;
+}
+.first{
+  font-size: 15px;
+  font-family: Arial;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.firstt {
+    width: 5%;
+    text-align: left;
+    height: 150px;
+    font-size: 15px;
+}
+
+.second {
+    width: 30%;
+    text-align: left;
+    font-size: 15px;
+}
+
+.third {
+    width: 8%;
+    text-align: left;
+    font-size: 15px;
+}
+
+.fourth {
+    width: 22%;
+    text-align: left;
+    font-size: 15px;
+}
+
+.fifth {
+    width: 22%;
+    text-align: left;
+    font-size: 15px;
+}
+
+.sixth {
+    width: 5%;
+    text-align: left;
+    font-size: 15px;
+}
+.seventh {
+    width: 8%;
+    text-align: left;
+    font-size: 15px;
 }
