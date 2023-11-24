@@ -1,18 +1,35 @@
 'use client'
-import { Box, Divider, Grid, Paper, Typography } from '@mui/material';
+import { Box, Button, Divider, Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
 import '../App.css';
 import scan from '../assests/scan.png';
 import scan1 from '../assests/scan1.png';
+import html2pdf from 'html2pdf.js';
+
+
+
 
 const SecondForm = ({formData}) => {
     console.log(formData)
+
+    const handlePrint = () => {
+        const element = document.getElementById('pdf-container');
+        const pdfOptions = {
+            margin: 15,
+            filename: 'bills',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 1, useCORS: true },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        };
+        html2pdf(element, pdfOptions);
+    };
+
     return (
         <>
-            <Grid container sx={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
-                <Grid item xs={12} sx={{ height: '100vh' }}>
+            <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
+                <Grid item xs={12} sx={{ border:"1px solid red" }}>
                     <Paper sx={{ width: '100%', height: '100%', }} elevation={0}>
-                        <Grid container sx={{ border: '1px solid lightgrey', borderRadius: '3px' }}>
+                        <Grid container sx={{ border: '1px solid lightgrey', borderRadius: '3px' }} id="pdf-container">
                             <Grid container sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '8px',p:'3px' }}>
                                 <Grid item xs={2} sx={{ height: '100px', display: 'flex', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '19px', fontWeight: 'bold', ml: '3px' }}>e-Way Bill</Typography>
@@ -230,6 +247,10 @@ const SecondForm = ({formData}) => {
                         </Grid>
 
                     </Paper>
+
+                    <div style={{ display: 'flex', justifyContent: 'center',marginTop:"20px" }}>
+                      <Button variant='contained' onClick={handlePrint}>Generate PDF</Button>
+                   </div>
 
                 </Grid>
             </Grid>
