@@ -24,8 +24,8 @@ function FormScreen({data}) {
     return (
         <>
 
-            <div style={{ display: 'flex', justifyContent: 'center' }} id="pdf-container">
-                <div className="mainbox">
+            <div style={{ display: 'flex', justifyContent: 'center',height:"fit-content",paddingBottom:"70px" }} id="pdf-container">
+                <div className="mainbox" style={{height:"1270px"}}>
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
                         <div className="imgBox" style={{ overflow: 'hidden' }}>
                             <img src={scan} alt="img" style={{ width: '98%', height: '200px' }} />
@@ -40,8 +40,8 @@ function FormScreen({data}) {
                             <th style={{width:"80%",outline:"none"}}></th>
                             </tr> */}
                             <tr>
-                                <td className='first' style={{ fontSize: "15px",width:"30%" }}>E-Way Bill No:</td>
-                                <td className="bold" style={{ fontSize: "17px",width:"70%" }}>{data.input1}</td>
+                                <td className='first' style={{ width:"30%" }}>E-Way Bill No:</td>
+                                <td className="bold" style={{ fontSize: "14px",width:"70%" }}>{data.input1}</td>
                             </tr>
                             {/* input2 */}
                             <tr>
@@ -134,8 +134,8 @@ function FormScreen({data}) {
 
                         </tbody>
                     </table>
-                     <div style={{padding:"5px",border:"1px solid #bdbdbd", marginTop: '110px'}}>
-                    <table style={{ width: '100%', overflow: 'hidden' }}>
+                     <div style={{padding:"5px",border:"1.5px solid #9e9e9e",zIndex:99, marginTop: '170px',backgroundColor:"white"}}>
+                    <table style={{ width: '100%', overflow: 'hidden',backgroundColor:"white" }}>
                         <tbody>
                             <tr style={{ width: '100%' }}>
                                 <th className="firstt">Mode</th>
@@ -158,7 +158,7 @@ function FormScreen({data}) {
                         </tbody>
                     </table>
                      </div>
-                     <div style={{padding:"5px",display:"flex",justifyContent:"center",alignItems:"center",border:"1px solid #bdbdbd",borderTop:"none"}}>
+                     <div style={{padding:"5px",backgroundColor:"white",display:"flex",justifyContent:"center",alignItems:"center",border:"1.5px solid #9e9e9e"}}>
                          <img src={scan2} style={{width:"130px",height:"70px"}}/>
                      </div>
                 </div>
