@@ -19,7 +19,9 @@ const SecondForm = ({formData}) => {
 
           setState(false)
          await printPdf();
-      
+         setTimeout(()=>{
+            setState(true)
+           },1000)
     };
 
    const printPdf =()=>{
@@ -229,15 +231,15 @@ const SecondForm = ({formData}) => {
                                         <td style={{ fontSize: '12px', width: '20%', textAlign: 'left', padding: '9px' }}>{formData.input33}</td>
                                     </tr>
                                 </table>
-                                <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column'  }}>
-                                    <Grid item xs={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
-                                        <Box sx={{ width: '100px', height: '45px', position: 'relative', }}>
+                                <Grid container sx={{ justifyContent: 'center',mt:"8px", alignItems: 'center', }}>
+                                    <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+                                        <Box sx={{ width: '100px', height: '40px', position: 'relative', }}>
 
-                                            <img src={scan1} alt='scan'  style={{ width: '100px', height: '45px', }} />
+                                            <img src={scan1} alt='scan'  style={{ width: '100px', height: '40px', }} />
                                         </Box>
                                     </Grid>
-                                    <Grid item xs={2}>
-                                        <Typography sx={{fontSize:'10px'}}>{formData.input34}</Typography>
+                                    <Grid item xs={12} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                        <Typography textAlign={'center'} sx={{fontSize:'10px',}}>{formData.input34}</Typography>
                                     </Grid>
 
                                 </Grid>

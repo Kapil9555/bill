@@ -163,7 +163,7 @@ const [state ,setState]=useState(true)
                         </tbody>
                     </table>
                      </div>
-                     <Grid container sx={{ display: 'flex', justifyContent: 'center',mt:"8px", alignItems: 'center', flexDirection:'column'  }}>
+                         <Grid container sx={{ display: 'flex', justifyContent: 'center',mt:"8px", alignItems: 'center', flexDirection:'column'  }}>
                                     <Grid item xs={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
                                         <Box sx={{ width: '100px', height: '40px', position: 'relative', }}>
 
