@@ -225,8 +225,8 @@ const SecondForm = ({formData}) => {
                                         <td style={{ fontSize: '12px', width: '8%', textAlign: 'left', padding: '9px' }}>{formData.input29}</td>
                                         <td style={{ fontSize: '12px', width: '25%', textAlign: 'rigt', padding: '9px' }}>{formData.input30}</td>
                                         <td style={{ fontSize: '12px', textAlign: 'right', padding: '9px' }}>{formData.input31}</td>
-                                        <td style={{ fontSize: '12px', width: '10%', textAlign: 'left', padding: '9px' }}>{formData.input27}</td>
-                                        <td style={{ fontSize: '12px', width: '20%', textAlign: 'left', padding: '9px' }}>{formData.input27}</td>
+                                        <td style={{ fontSize: '12px', width: '10%', textAlign: 'left', padding: '9px' }}>{formData.input32}</td>
+                                        <td style={{ fontSize: '12px', width: '20%', textAlign: 'left', padding: '9px' }}>{formData.input33}</td>
                                     </tr>
                                 </table>
                                 <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column'  }}>
@@ -237,7 +237,7 @@ const SecondForm = ({formData}) => {
                                         </Box>
                                     </Grid>
                                     <Grid item xs={2}>
-                                        <Typography sx={{fontSize:'10px'}}>821283374231</Typography>
+                                        <Typography sx={{fontSize:'10px'}}>{formData.input34}</Typography>
                                     </Grid>
 
                                 </Grid>

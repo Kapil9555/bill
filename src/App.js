@@ -81,7 +81,8 @@ const [formData, setFormData] = useState({
   input30:"",
   input31:"",
   input32:"",
-  input33:""
+  input33:"",
+  input34:""
 })
 //  if(check == password){
 //    <Box sx={{height:"100dvh",display:"flex",justifyContent:"center",alignItems:"center"}}>

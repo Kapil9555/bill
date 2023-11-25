@@ -246,6 +246,14 @@ const ControlSecondForm = ({formData,setFormData}) => {
 
                         </Typography>
                         <OutlinedInput onChange={inputHandler} fullWidth name='input33' value={formData.input33} placeholder='Enter formData...' />
+
+
+                         {/* input 34 */}
+                         <Typography sx={{ fontSize: "19px", mt: "15px" }}>
+                         Scanner Code
+
+                        </Typography>
+                        <OutlinedInput onChange={inputHandler} fullWidth name='input34' value={formData.input34} placeholder='Enter formData...' />
                     </Box>
 
                     <Box sx={{mt:"20px", display:"flex",justifyContent:"center"}}>
