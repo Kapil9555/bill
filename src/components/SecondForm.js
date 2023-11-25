@@ -11,22 +11,24 @@ import html2pdf from 'html2pdf.js';
 
 const SecondForm = ({formData}) => {
     console.log(formData)
-    const [state , setState]=useState(true)
-
-
+    const [state ,setState]=useState(true)
+   
 
     const handlePrint = async() => {
 
-          setState(false)
-         await printPdf();
-      
-    };
+        setState(false)
+       await printPdf();
+       setTimeout(()=>{
+        setState(true)
+       },1000)
+    
+  };
 
-   const printPdf =()=>{
-    setTimeout(()=>{
-         window.print();
-    },200)
-   }
+ const printPdf =()=>{
+  setTimeout(()=>{
+       window.print();
+  },200)
+ }
 
     return (
         <>

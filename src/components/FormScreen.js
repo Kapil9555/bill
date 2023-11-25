@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import '../App.css';
 import scan from '../assests/img.png'
 import html2pdf from 'html2pdf.js';
-import { Button } from '@mui/material';
+import { Box, Button, Grid, Typography } from '@mui/material';
 import scan2 from '../assests/Screenshot from 2023-11-23 17-49-48.png'
+import scan1 from '../assests/scan1.png';
 
 function FormScreen({data}) {
 const [state ,setState]=useState(true)
@@ -13,6 +14,9 @@ const [state ,setState]=useState(true)
 
         setState(false)
        await printPdf();
+       setTimeout(()=>{
+        setState(true)
+       },1000)
     
   };
 
@@ -25,8 +29,8 @@ const [state ,setState]=useState(true)
     return (
         <>
 
-            <div style={{ display: 'flex', justifyContent: 'center',height:"fit-content",paddingBottom:"70px" }} id="pdf-container">
-                <div className="mainbox" style={{height:"1270px"}}>
+            <div style={{ display: 'flex', justifyContent: 'center'}} id="pdf-container">
+                <div className="mainbox" style={{height:"1325px"}}>
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
                         <div className="imgBox" style={{ overflow: 'hidden' }}>
                             <img src={scan} alt="img" style={{ width: '98%', height: '200px' }} />
@@ -159,9 +163,19 @@ const [state ,setState]=useState(true)
                         </tbody>
                     </table>
                      </div>
-                     <div style={{padding:"5px",backgroundColor:"white",display:"flex",justifyContent:"center",alignItems:"center",border:"1.5px solid #9e9e9e"}}>
-                         <img src={scan2} style={{width:"130px",height:"70px"}}/>
-                     </div>
+                     <Grid container sx={{ display: 'flex', justifyContent: 'center',mt:"8px", alignItems: 'center', flexDirection:'column'  }}>
+                                    <Grid item xs={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+                                        <Box sx={{ width: '100px', height: '40px', position: 'relative', }}>
+
+                                            <img src={scan1} alt='scan'  style={{ width: '100px', height: '40px', }} />
+                                        </Box>
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <Typography sx={{fontSize:'10px'}}>821283374231</Typography>
+                                    </Grid>
+
+                                </Grid>
+
                 </div>
             </div>
 
