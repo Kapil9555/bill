@@ -6,20 +6,21 @@ import { Button } from '@mui/material';
 import scan2 from '../assests/Screenshot from 2023-11-23 17-49-48.png'
 
 function FormScreen({data}) {
-
+const [state ,setState]=useState(true)
    
 
-    const handlePrint = () => {
-        const element = document.getElementById('pdf-container');
-        const pdfOptions = {
-            margin: 15,
-            filename: 'bills',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 1, useCORS: true },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        };
-        html2pdf(element, pdfOptions);
-    };
+    const handlePrint = async() => {
+
+        setState(false)
+       await printPdf();
+    
+  };
+
+ const printPdf =()=>{
+  setTimeout(()=>{
+       window.print();
+  },200)
+ }
 
     return (
         <>
@@ -164,7 +165,7 @@ function FormScreen({data}) {
                 </div>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center',marginTop:"20px" }}>
+            <div style={{ display: state ?"flex":'none', justifyContent: 'center',marginTop:"20px" }}>
                 <Button variant='contained' onClick={handlePrint}>Generate PDF</Button>
             </div>
         </>

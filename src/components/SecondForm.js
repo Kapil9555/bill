@@ -1,6 +1,6 @@
 'use client'
 import { Box, Button, Divider, Grid, Paper, Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import scan from '../assests/scan.png';
 import scan1 from '../assests/scan1.png';
@@ -11,23 +11,27 @@ import html2pdf from 'html2pdf.js';
 
 const SecondForm = ({formData}) => {
     console.log(formData)
+    const [state , setState]=useState(true)
 
-    const handlePrint = () => {
-        const element = document.getElementById('pdf-container');
-        const pdfOptions = {
-            margin: 15,
-            filename: 'bills',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 1, useCORS: true },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        };
-        html2pdf(element, pdfOptions);
+
+
+    const handlePrint = async() => {
+
+          setState(false)
+         await printPdf();
+      
     };
+
+   const printPdf =()=>{
+    setTimeout(()=>{
+         window.print();
+    },200)
+   }
 
     return (
         <>
             <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
-                <Grid item xs={12} sx={{ border:"1px solid red" }}>
+                <Grid item xs={12} >
                     <Paper sx={{ width: '100%', height: '100%', }} elevation={0}>
                         <Grid container sx={{ border: '1px solid lightgrey', borderRadius: '3px' }} id="pdf-container">
                             <Grid container sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '8px',p:'3px' }}>
@@ -248,7 +252,7 @@ const SecondForm = ({formData}) => {
 
                     </Paper>
 
-                    <div style={{ display: 'flex', justifyContent: 'center',marginTop:"20px" }}>
+                    <div style={{ display:state ? "flex":'none', justifyContent: 'center',marginTop:"20px" }}>
                       <Button variant='contained' onClick={handlePrint}>Generate PDF</Button>
                    </div>
 
