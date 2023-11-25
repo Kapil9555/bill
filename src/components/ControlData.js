@@ -174,6 +174,13 @@ const ControlData = ({ data, setData }) => {
                         </Typography>
                         <OutlinedInput onChange={inputHandler} fullWidth name='input23' value={data.input23} placeholder='Enter data...' />
 
+
+                           {/* input24 */}
+                           <Typography sx={{ fontSize: "19px", mt: "15px" }}>
+                            Scanner
+                        </Typography>
+                        <OutlinedInput onChange={inputHandler} fullWidth name='input24' value={data.input24} placeholder='Enter data...' />
+
                     </Box>
 
                     <Box sx={{mt:"20px", display:"flex",justifyContent:"center"}}>

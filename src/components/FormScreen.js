@@ -171,7 +171,7 @@ const [state ,setState]=useState(true)
                                         </Box>
                                     </Grid>
                                     <Grid item xs={2}>
-                                        <Typography sx={{fontSize:'10px'}}>821283374231</Typography>
+                                        <Typography sx={{fontSize:'10px'}}>{data.input24}</Typography>
                                     </Grid>
 
                                 </Grid>
