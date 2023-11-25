@@ -1,7 +1,7 @@
 'use client'
 import { Box, Button, Divider, Grid, Paper, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import '../App.css';
+import '../master.css';
 import scan from '../assests/scan.png';
 import scan1 from '../assests/scan1.png';
 import html2pdf from 'html2pdf.js';
@@ -11,31 +11,29 @@ import html2pdf from 'html2pdf.js';
 
 const SecondForm = ({formData}) => {
     console.log(formData)
-    const [state ,setState]=useState(true)
-   
+    const [state , setState]=useState(true)
+
+
 
     const handlePrint = async() => {
 
-        setState(false)
-       await printPdf();
-       setTimeout(()=>{
-        setState(true)
-       },1000)
-    
-  };
+          setState(false)
+         await printPdf();
+      
+    };
 
- const printPdf =()=>{
-  setTimeout(()=>{
-       window.print();
-  },200)
- }
+   const printPdf =()=>{
+    setTimeout(()=>{
+         window.print();
+    },200)
+   }
 
     return (
         <>
             <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
                 <Grid item xs={12} >
                     <Paper sx={{ width: '100%', height: '100%', }} elevation={0}>
-                        <Grid container sx={{ border: '1px solid lightgrey', borderRadius: '3px' }} id="pdf-container">
+                        <Grid container sx={{ border: '2px solid lightgrey', borderRadius: '3px' }} id="pdf-container">
                             <Grid container sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '8px',p:'3px' }}>
                                 <Grid item xs={2} sx={{ height: '100px', display: 'flex', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '19px', fontWeight: 'bold', ml: '3px' }}>e-Way Bill</Typography>
@@ -47,8 +45,8 @@ const SecondForm = ({formData}) => {
                                     </Box>
                                 </Grid>
                             </Grid>
-                            <Grid container sx={{ borderRadius: '3px',m:'4px',  border: '1px solid lightgrey' }}>
-                                <Grid item xs={12} sx={{ p: '4px 3px', borderBottom: '1px solid lightgrey' }}>
+                            <Grid container sx={{ borderRadius: '3px',m:'4px',  border: '2px solid lightgrey' }}>
+                                <Grid item xs={12} sx={{ p: '4px 3px', borderBottom: '2px solid lightgrey' }}>
                                     <Typography sx={{ fontSize: '10px', fontWeight: 'bold' }}>1. E-WAY BILL Details</Typography>
                                 </Grid>
                                 <Grid container sx={{ p: '4px 3px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -108,14 +106,14 @@ const SecondForm = ({formData}) => {
 
                                     <Divider sx={{ width: '99.5%', bgcolor: '1px sild lightgrey', hiehgt: '1px', m: ' 2px' }} />
                                 </Grid>
-                                <Grid item xs={12} sx={{ p: '4px 3px', border: '1px solid lightgrey', mt: '4px' }}>
+                                <Grid item xs={12} sx={{ p: '4px 3px', border: '2px solid lightgrey', mt: '4px' }}>
                                     <Typography sx={{ fontSize: '10px', fontWeight: 'bold' }}>2.Address Details</Typography>
                                 </Grid>
                                 <Grid container sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: '4px 4px', mt: '3px' }}>
-                                    <Grid item xs={5.9} sx={{ bgcolor: '1px solid lightgrey', height: '5px' }}>
+                                    <Grid item xs={5.9} sx={{ bgcolor: '2px solid lightgrey', height: '5px' }}>
                                         <Divider sx={{ width: '100%', bgcolor: '2px sild lightgrey', hiehgt: '2px', }} />
                                     </Grid>
-                                    <Grid item xs={5.9} sx={{ bgcolor: '1px solid lightgrey', height: '5px' }}>
+                                    <Grid item xs={5.9} sx={{ bgcolor: '2px solid lightgrey', height: '5px' }}>
                                         <Divider sx={{ width: '100%', bgcolor: '2px sild lightgrey', hiehgt: '2px', }} />
                                     </Grid>
                                 </Grid>
@@ -143,7 +141,7 @@ const SecondForm = ({formData}) => {
 
                                 </Grid>
 
-                                <Grid item xs={12} sx={{ p: '4px 3px', border: '1px solid lightgrey', mt: '3px' }}>
+                                <Grid item xs={12} sx={{ p: '4px 3px', border: '2px solid lightgrey', mt: '3px' }}>
                                     <Typography sx={{ fontSize: '10px', fontWeight: 'bold' }}>3. Goods Details</Typography>
                                 </Grid>
                                 {/* <Grid container sx={{}}> */}
@@ -191,11 +189,11 @@ const SecondForm = ({formData}) => {
                                     </tr>
                                 </table>
 
-                                <Grid item xs={12} sx={{ p: '4px 3px', border: '1px solid lightgrey', }}>
+                                <Grid item xs={12} sx={{ p: '4px 3px', border: '2px solid lightgrey', }}>
                                     <Typography sx={{ fontSize: '10px', fontWeight: 'bold' }}>4. Transportation Details</Typography>
                                 </Grid>
 
-                                <Grid container sx={{ p: '4px 3px', display: 'flex', alignItems: 'flex-start' }}>
+                                <Grid container sx={{ p: '4px 3px', display: 'flex', alignItems: 'flex-start', border: '2px solid lightgrey', }}>
                                     <Grid item xs={6} >
 
                                         <Typography sx={{ fontSize: '10px' }}>Transporter ID & Name : <b>{formData.input25}</b>  </Typography>
@@ -208,7 +206,7 @@ const SecondForm = ({formData}) => {
                                     </Grid>
 
                                 </Grid>
-                                <Grid item xs={12} sx={{ p: '4px 3px', border: '1px solid lightgrey', }}>
+                                <Grid item xs={12} sx={{ p: '4px 3px', border: '2px solid lightgrey', }}>
                                     <Typography sx={{ fontSize: '10px', fontWeight: 'bold' }}>5. Vehicle Details</Typography>
                                 </Grid>
                                 <table style={{ width: '100%', margin: '10px' }}>
